@@ -55,7 +55,7 @@ impl PacketProtocol {
 
 /// A Tun Packet to be sent or received on the TUN interface.
 #[derive(Debug)]
-pub struct TunPacket(PacketProtocol, Bytes);
+pub struct TunPacket(PacketProtocol, pub Bytes);
 
 /// Infer the protocol based on the first nibble in the packet buffer.
 fn infer_proto(buf: &[u8]) -> PacketProtocol {
